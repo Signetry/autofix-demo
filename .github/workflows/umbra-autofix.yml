@@ -124,6 +124,17 @@ jobs:
             *) echo "::error::Unknown fix_agent '$FIX_AGENT'"; exit 1 ;;
           esac
 
+      - name: DEBUG codex exec raw stderr
+        if: ${{ (github.event.inputs.fix_agent || 'codex-cli') == 'codex-cli' }}
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_BASE_URL: ${{ github.event.inputs.openai_base_url }}
+        run: |
+          [ -n "$OPENAI_API_KEY" ] && echo "::add-mask::$OPENAI_API_KEY" || true
+          echo "CODEX_HOME=$CODEX_HOME"; cat "$CODEX_HOME/config.toml" 2>/dev/null || echo "(no config)"
+          echo "--- direct codex exec (full stderr) ---"
+          codex exec --ephemeral --color never --sandbox danger-full-access --skip-git-repo-check -C "$GITHUB_WORKSPACE" "Reply with exactly: DEBUG_OK" 2>&1 | tail -40 || true
+
       - name: Scan + propose governed fixes (JSON)
         env:
           # Bring-your-own-key: the executor's credential is read from THIS repo's
