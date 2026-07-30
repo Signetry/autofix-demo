@@ -1,0 +1,238 @@
+{
+  "receipt": {
+    "kind": "umbra.remediation-receipt",
+    "version": 1,
+    "generated_at": "2026-07-30T19:43:09.613847+00:00",
+    "repo": "",
+    "base_commit": "b82319fa2863b173fe4ec76265449a3cc25817ad",
+    "executor": "codex-cli",
+    "policy_hash": "sha256:e2e2b0f43d8bba1b537f7178c0667c29b25d2e7db4f968678f77f4777383b7fe",
+    "contract": {
+      "version": 1,
+      "task_type": "security_fix",
+      "allowed_paths": [
+        "app.py",
+        "**/__pycache__/**",
+        "*.pyc"
+      ],
+      "forbidden_paths": [
+        ".github/**",
+        ".umbra/**"
+      ],
+      "max_files_changed": 0,
+      "required_checks": [],
+      "network": "deny",
+      "authority_on_success": "branch_pr_only",
+      "allowed_tools": [],
+      "denied_bash": [],
+      "allowed_mcp": [],
+      "allowed_skills": [],
+      "capability_graph": false,
+      "source": "repo",
+      "policy_owner": "bkd-dotcom",
+      "policy_version": "2",
+      "policy_approved_at": "",
+      "policy_status": {
+        "status": "declared",
+        "owner": "bkd-dotcom",
+        "version": "2",
+        "approved_at": null,
+        "note": "Policy declares a human owner and version (change-controlled metadata). This is declared provenance, not a cryptographic signature."
+      }
+    },
+    "contract_result": {
+      "status": "pass",
+      "passed": true,
+      "checks": [
+        {
+          "name": "path_wellformed",
+          "passed": true,
+          "detail": "All changed paths are well-formed."
+        },
+        {
+          "name": "forbidden_paths",
+          "passed": true,
+          "detail": "No forbidden paths touched."
+        },
+        {
+          "name": "allowed_paths",
+          "passed": true,
+          "detail": "All changed files are within the allowed scope."
+        },
+        {
+          "name": "max_files_changed",
+          "passed": true,
+          "detail": "2 file(s) changed (no limit)."
+        }
+      ],
+      "violations": [],
+      "changed_files": [
+        "__pycache__/app.cpython-313.pyc",
+        "app.py"
+      ],
+      "contract_hash": "sha256:e2e2b0f43d8bba1b537f7178c0667c29b25d2e7db4f968678f77f4777383b7fe"
+    },
+    "trust_boundary": {
+      "clean": true,
+      "quarantined_count": 0,
+      "scanned_sources": [
+        "README.md"
+      ],
+      "findings": [],
+      "note": "No agent-directed manipulation patterns were detected in the scanned text."
+    },
+    "verifier": {
+      "status": "reviewable",
+      "blocked": false,
+      "evidence_completeness": 67,
+      "changed_files": [
+        "__pycache__/app.cpython-313.pyc",
+        "app.py"
+      ],
+      "secrets_found": 0,
+      "independent_status": "clean",
+      "hijack_signal": false,
+      "independent_detail": "No trust-boundary manipulation was detected, so there is no injection surface to correlate the change against.",
+      "checks": [
+        {
+          "name": "contract",
+          "status": "pass",
+          "detail": "Change is within the contract's scope and budget.",
+          "blocking": true
+        },
+        {
+          "name": "secret_scan",
+          "status": "pass",
+          "detail": "No likely credentials in the changed content.",
+          "blocking": true
+        },
+        {
+          "name": "advisory_cleared",
+          "status": "unavailable",
+          "detail": "No specific advisory/fix version was claimed for this change.",
+          "blocking": false
+        },
+        {
+          "name": "tests",
+          "status": "unavailable",
+          "detail": "No test command was run for this change \u2014 human validation required.",
+          "blocking": false
+        },
+        {
+          "name": "citations",
+          "status": "pass",
+          "detail": "All claimed files are present in the changeset.",
+          "blocking": false
+        },
+        {
+          "name": "independent_masked",
+          "status": "pass",
+          "detail": "No trust-boundary manipulation was detected, so there is no injection surface to correlate the change against.",
+          "blocking": false
+        }
+      ]
+    },
+    "checks": {
+      "ran": false,
+      "all_passed": false,
+      "enforcement": "none",
+      "unsandboxed_code_execution": false,
+      "results": []
+    },
+    "baseline_checks": null,
+    "check_diagnosis": null,
+    "model_identity": {
+      "executor": "codex-cli",
+      "cli_version": "codex-cli 0.144.4",
+      "model_configured": "codex-default",
+      "model_resolved": "unavailable",
+      "model_evidence": "codex-default",
+      "reasoning_effort": "codex-default"
+    },
+    "context_manifest": {
+      "trusted_policy": [
+        "umbra.mission",
+        "contract:.umbra/admission.yaml"
+      ],
+      "included_evidence": [],
+      "excluded": [],
+      "redaction_count": 0,
+      "excluded_categories": [],
+      "invariant": "Repository text that Umbra supplies in its constructed context is passed to the coding agent as quoted evidence, never as executable instructions. Only Umbra-owned policy is treated as instruction. Untrusted instruction files are redacted on disk before the agent runs. This does not enumerate every file the agent may independently read, nor guarantee against all prompt injection."
+    },
+    "plan_capability_set": null,
+    "plan_adherence": null,
+    "proposed_change": null,
+    "provider_ledger": {
+      "change": "codex-cli",
+      "engineering": "codex-cli",
+      "checks": "shell",
+      "verifier": "deterministic",
+      "trust_boundary": "deterministic"
+    },
+    "diff_hash": "sha256:b55613b4f9f344799bcd10c761f7b63db0c6c19029f6ca262d47e79de945744c",
+    "authority_level": 2,
+    "authority": "branch_pr",
+    "human_decision": null,
+    "pr_url": null,
+    "outcome": "ADMITTED (branch PR) \u2014 the agent stayed in scope, required checks passed, and the change was independently verified; it may prepare a branch-only PR. Human approval is still required to merge.",
+    "auto_merge": false,
+    "human_review_required": true
+  },
+  "canonical_hash": "sha256:aeb7281371cbf90ee810c5cd2b24ec71291528ed45e2b9ffd4dad990682441f5",
+  "signature": "HN+OvgA7xeX+Nep+GepiQbQiaAzAcZc1XyiqJA4r1orERG+L2dseHuabF9oWxze9PctrXSNeOQ81nnDPlUJ2CQ==",
+  "public_key": "yelokqrEon3+PmESfqMUH+JqsaWY0M6AtZ2UoG9ObOE=",
+  "algorithm": "Ed25519",
+  "key_ephemeral": true,
+  "gates": {
+    "all_pass": false,
+    "gates": [
+      {
+        "id": "G1",
+        "name": "Capability integrity",
+        "status": "unproven",
+        "question": "What was this agent allowed to do?",
+        "reason": "No plan capability set was bound for this run (pre-v2 receipt).",
+        "evidence": {
+          "plan_hash": null,
+          "contract_hash": "sha256:e2e2b0f43d8bba1b537f7178c0667c29b25d2e7db4f968678f77f4777383b7fe",
+          "within_plan": null,
+          "deviations": []
+        }
+      },
+      {
+        "id": "G2",
+        "name": "Behavioral authenticity",
+        "status": "unproven",
+        "question": "Did the checks / sandbox actually run?",
+        "reason": "The contract declared no required checks, so behavioral authenticity is not asserted.",
+        "evidence": {
+          "required_checks": [],
+          "ran": false,
+          "all_passed": false,
+          "enforcement": "none",
+          "checks_provider": "shell"
+        }
+      },
+      {
+        "id": "G3",
+        "name": "Interaction auditability",
+        "status": "unproven",
+        "question": "Is the history tamper-evident?",
+        "reason": "Signed with the dev-fallback key (its seed is public), so this is not trustworthy provenance. Set a production UMBRA_SIGNING_KEY.",
+        "evidence": {
+          "signed": true,
+          "canonical_hash": "sha256:aeb7281371cbf90ee810c5cd2b24ec71291528ed45e2b9ffd4dad990682441f5",
+          "key_ephemeral": true,
+          "algorithm": "Ed25519",
+          "transparency_log": {
+            "logged": false,
+            "root": null,
+            "size": null,
+            "index": null
+          }
+        }
+      }
+    ]
+  }
+}
