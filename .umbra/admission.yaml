@@ -1,0 +1,12 @@
+task_type: security_fix
+allowed_paths:
+  - "app.py"
+forbidden_paths:
+  - ".github/**"
+  - ".umbra/**"
+diff_budget:
+  max_files: 3
+  max_lines: 80
+required_checks: []
+policy_owner: bkd-dotcom
+policy_version: "1"
