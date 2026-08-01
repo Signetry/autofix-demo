@@ -1,5 +1,9 @@
 # umbra-autofix-demo
 
+> **Copyright (c) 2026 Binay Dalai. All rights reserved.**
+> This repository is strictly for viewing and contributing to the original project. You may not use, copy, modify, distribute, or commercialize this code for your own personal or commercial projects without explicit written permission. Only the original author retains the right to use and monetize this project.
+
+
 A **deliberately vulnerable** demo target for [Umbra](https://github.com/bkd-dotcom/umbra-core)'s
 governed auto-fix. It exists so you can watch the full loop run end-to-end:
 
