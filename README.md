@@ -4,7 +4,7 @@
 > This repository is strictly for viewing and contributing to the original project. You may not use, copy, modify, distribute, or commercialize this code for your own personal or commercial projects without explicit written permission. Only the original author retains the right to use and monetize this project.
 
 
-A **deliberately vulnerable** demo target for [Umbra](https://github.com/bkd-dotcom/umbra-core)'s
+A **deliberately vulnerable** demo target for [Umbra](https://github.com/Signetry/core)'s
 governed auto-fix. It exists so you can watch the full loop run end-to-end:
 
 ```
@@ -33,4 +33,4 @@ PR with the signed receipt committed as `.umbra-receipt.json`. A human merges.
 The change contract in [`.umbra/admission.yaml`](.umbra/admission.yaml) allows edits
 to `app.py` only, so a correct in-scope fix can earn L2.
 
-Setup details: [umbra-core/docs/AUTOFIX_SETUP.md](https://github.com/bkd-dotcom/umbra-core/blob/main/docs/AUTOFIX_SETUP.md).
+Setup details: [umbra-core/docs/AUTOFIX_SETUP.md](https://github.com/Signetry/core/blob/main/docs/AUTOFIX_SETUP.md).
