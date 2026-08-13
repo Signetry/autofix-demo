@@ -34,3 +34,5 @@ The change contract in [`.signetry/admission.yaml`](.signetry/admission.yaml) al
 to `app.py` only, so a correct in-scope fix can earn L2.
 
 Setup details: [signetry-core/docs/AUTOFIX_SETUP.md](https://github.com/Signetry/core/blob/main/docs/AUTOFIX_SETUP.md).
+
+# signetry brand verify — remove after.
