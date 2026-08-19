@@ -68,7 +68,7 @@ jobs:
       - name: Install Signetry
         # signetry-core is source-available (All Rights Reserved) and not on PyPI —
         # install it from the source repo by tag.
-        run: pip install "signetry-core @ git+https://github.com/Signetry/core@v0.6.0"
+        run: pip install "signetry-core @ git+https://github.com/Signetry/core@v0.7.0"
 
       - name: Install the executor CLI
         env:
